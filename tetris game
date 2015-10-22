@@ -1,0 +1,31 @@
+package core;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.*;
+import java.awt.event.*;
+import base.Piece;
+import java.awt.BorderLayout;
+
+public class Tetris extends JFrame implements ActionListener, KeyListener, Runnable {
+	
+	private final int MOVE_UP_CURRENT_PIECE = 0;
+	private final int MOVE_DOWN_CURRENT_PIECE = 1;
+	private final int MOVE_LEFT_CURRENT_PIECE = 2;
+	private final int MOVE_RIGHT_CURRENT_PIECE = 4;
+	private final int ROTATE_RIGHT_CURRENT_PIECE = 8;
+	private final int ROTATE_LEFT_CURRENT_PIECE = 16;
+
+	private final int MAX_GAME_LEVEL = 5;
+	private final long GAME_LEVEL[] = {500L, 400L, 300L, 200L, 100L, 100L};
+	private final int GAME_SCORE[] = {10, 20, 30, 40, 50, 60};
+	private final int NEXT_LEVEL = 4;
+	
+	private final Color pieceColorList[] =
+		{Color.RED, Color.BLUE, Color.CYAN, Color.GREEN, 
+			Color.MAGENTA, Color.ORANGE, Color.PINK, Color.YELLOW, Color.WHITE};
+	
+	private final int MAX_FULL_ROWS = 4;
+
+	private int currentLevel = 0;
+	private int deletedLines = 0;
