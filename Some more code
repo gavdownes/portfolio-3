@@ -1,0 +1,24 @@
+	public Tetris()	{
+		
+		setSize(400, 530);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);		
+		setTitle("Java Tetris");
+		setResizable(false);
+		setLocationRelativeTo(null);
+		setLayout(new BorderLayout());
+
+		setMenu();
+
+		setNorthPanel();
+		setCentrePanel();
+		setEastPanel();
+		setWestPanel();
+		setSouthPanel();
+		
+		add(pnlNorth, BorderLayout.NORTH);
+		add(pnlCentre, BorderLayout.CENTER);
+		add(pnlEast, BorderLayout.EAST);
+		add(pnlWest, BorderLayout.WEST);
+		add(pnlSouth, BorderLayout.SOUTH);
+	}
+
