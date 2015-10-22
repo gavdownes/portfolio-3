@@ -1,0 +1,40 @@
+	private void setMenu() {
+		
+		//About
+		about = new AboutBox();
+
+		//Menu
+		menubar = new JMenuBar();
+		menFile = new JMenu("File");
+		menGame = new JMenu("Game");
+		menHelp = new JMenu("Help");
+		itmExit = new JMenuItem("Exit");
+		itmStart = new JMenuItem("Start");
+		itmAbout = new JMenuItem("About");
+		
+		//Shortcuts
+		menFile.setMnemonic('F');
+		menGame.setMnemonic('G');
+		menHelp.setMnemonic('H');
+		itmExit.setMnemonic('x');
+		itmStart.setMnemonic('S');
+		itmAbout.setMnemonic('A');
+		
+		//Key Accelerator
+		itmExit.setAccelerator(KeyStroke.getKeyStroke("alt F4"));
+		itmStart.setAccelerator(KeyStroke.getKeyStroke("alt F2"));
+		itmExit.addActionListener(this);
+		itmStart.addActionListener(this);
+		itmAbout.addActionListener(this);
+		
+		//Adding Items to Menu
+		menFile.add(itmExit);
+		menGame.add(itmStart);
+		menHelp.add(itmAbout);
+		
+		menubar.add(menFile);
+		menubar.add(menGame);
+		menubar.add(menHelp);
+		
+		setJMenuBar(menubar);
+	}
